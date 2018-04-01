@@ -1,5 +1,8 @@
 
 import React from 'react'
+import SVGInline from "react-svg-inline"
+import withTabBar from '../../components/tab-bar'
+import mySvg from '../../assets/svg/scan.svg'
 import Slide from '../../components/slide'
 import styles from './index.less'
 
@@ -10,6 +13,7 @@ const banner = [
   '//aecpm.alicdn.com/simba/img/TB14ab1KpXXXXclXFXXSutbFXXX.jpg_q50.jpg',
 ]
 
+@withTabBar
 export default class Home extends React.Component {
   constructor(props) {
     super(props)
