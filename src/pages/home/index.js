@@ -1,8 +1,10 @@
 
 import React from 'react'
+import ReactDOM from 'react-dom'
 import withTabBar from '../../components/tab-bar'
 import Scroll from '../../components/scroll'
 import Slide from '../../components/slide'
+import TopBar from './top-bar';
 import styles from './index.less'
 
 const banner = [
@@ -17,6 +19,16 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props)
     this.loadImg = false
+    this.topBarHeight = 0
+    this.state = {
+      shrink: false
+    }
+  }
+
+  componentDidMount() {
+    if (this.topBar) {
+      this.topBarHeight = ReactDOM.findDOMNode(this.topBar).clientHeight;
+    }
   }
 
   imgLoaded = () => {
@@ -26,10 +38,27 @@ export default class Home extends React.Component {
     }
   }
 
+  handleScroll = (pos) => {
+    if (this.topBarHeight && pos.y < -this.topBarHeight && !this.state.shrink) {
+      this.setState({ shrink: true })
+    }
+    if ( this.topBarHeight && pos.y > -this.topBarHeight && this.state.shrink) {
+      this.setState({ shrink: false })
+    }
+  }
+
   render() {
+    const { shrink } = this.state
+
     return (
       <div className={styles.root}>
-        <Scroll ref={c => this.scroll = c}>
+        <TopBar ref={c => this.topBar = c} shrink={shrink} />
+        <Scroll
+          className={styles.scroll}
+          ref={c => this.scroll = c}
+          probeType={3}
+          listenScroll={true}
+          scroll={this.handleScroll}>
           <Slide>
             {
               banner.map((v, i) => (
@@ -37,7 +66,7 @@ export default class Home extends React.Component {
               ))
             }
           </Slide>
-          <div className={styles.item}>1</div>
+          <div className={styles.item}>像素<div className={styles.box}/></div>
           <div className={styles.item}>1</div>
           <div className={styles.item}>1</div>
           <div className={styles.item}>1</div>

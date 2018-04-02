@@ -9,6 +9,7 @@ const DIRECTION_H = 'horizontal'
 const DIRECTION_V = 'vertical'
 
 const scrollProps = {
+  className: PropTypes.string,
   dataSource: PropTypes.array,
   probeType: PropTypes.oneOf([1, 2, 3]),
   click: PropTypes.bool,
@@ -24,6 +25,7 @@ const scrollProps = {
 }
 
 const defaultProps = {
+  className: '',
   dataSource: [],
   probeType: 1,
   click: true,
@@ -123,9 +125,9 @@ export default class Scroll extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, className } = this.props
     return (
-      <div className={styles['list-wrapper']} ref={c => this.wrapper = c}>
+      <div className={styles['list-wrapper'] + ' ' + className} ref={c => this.wrapper = c}>
         <div className={styles['scroll-content']} ref={c => this.scrollContent = c}>
           {children}
         </div>
