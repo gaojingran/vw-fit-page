@@ -1,8 +1,7 @@
 
 import React from 'react'
-import SVGInline from "react-svg-inline"
 import withTabBar from '../../components/tab-bar'
-import mySvg from '../../assets/svg/scan.svg'
+import Scroll from '../../components/scroll'
 import Slide from '../../components/slide'
 import styles from './index.less'
 
@@ -17,18 +16,34 @@ const banner = [
 export default class Home extends React.Component {
   constructor(props) {
     super(props)
+    this.loadImg = false
+  }
+
+  imgLoaded = () => {
+    if (!this.loadImg && this.scroll) {
+      this.loadImg = true
+      this.scroll.refresh()
+    }
   }
 
   render() {
     return (
       <div className={styles.root}>
-        <Slide>
-          {
-            banner.map((v, i) => (
-              <img key={i} src={v} />
-            ))
-          }
-        </Slide>
+        <Scroll ref={c => this.scroll = c}>
+          <Slide>
+            {
+              banner.map((v, i) => (
+                <img key={i} src={v} onLoad={this.imgLoaded} />
+              ))
+            }
+          </Slide>
+          <div className={styles.item}>1</div>
+          <div className={styles.item}>1</div>
+          <div className={styles.item}>1</div>
+          <div className={styles.item}>1</div>
+          <div className={styles.item}>1</div>
+          <div className={styles.item}>1</div>
+        </Scroll>
       </div>
     )
   }
