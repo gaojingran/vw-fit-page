@@ -133,7 +133,7 @@ table {
 /* custom */
 
 a {
-  color: #6e6e6e;
+  color: #787878;
   text-decoration: none;
   -webkit-backface-visibility: hidden;
 }
@@ -141,7 +141,8 @@ a {
 html,
 body {
   width: 100%;
-  color: #6e6e6e;
+  color: #787878;
+  background-color: #f4f4f4;
   font-weight: 200;
   font-family: 'PingFang SC', 'STHeitiSC-Light', 'Arial, Helvetica, sans-serif';
 }

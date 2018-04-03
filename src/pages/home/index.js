@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom'
 import withTabBar from '../../components/tab-bar'
 import Scroll from '../../components/scroll'
 import Slide from '../../components/slide'
-import TopBar from './top-bar';
+import TopBar from './top-bar'
+import GridMenu from './grid-menu'
 import styles from './index.less'
 
 const banner = [
@@ -66,6 +67,7 @@ export default class Home extends React.Component {
               ))
             }
           </Slide>
+          <GridMenu />
           <div className={styles.item}>像素<div className={styles.box}/></div>
           <div className={styles.item}>1</div>
           <div className={styles.item}>1</div>
