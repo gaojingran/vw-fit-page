@@ -93,7 +93,7 @@ export default class VerticalSlide extends React.Component {
   setSlideHeight = (isResize = false) => {
     this.children = this.slideGroup.childNodes
     let height = 0
-    let slideHeight = this.slide.clientHeight
+    let slideHeight = this.wrapper.clientHeight
     this.children.forEach(child => {
       if (child.nodeType === 1) {
         // 添加默认样式
@@ -132,6 +132,10 @@ export default class VerticalSlide extends React.Component {
     this.slide.on('beforeScrollStart', () => {
       this.props.autoPlay && this.timer && clearTimeout(this.timer)
     })
+
+    if (this.props.autoPlay) {
+      this.play()
+    }
   }
 
   onScrollEnd = () => {
@@ -148,6 +152,7 @@ export default class VerticalSlide extends React.Component {
   }
 
   render() {
+    const { children } = this.props
     return (
       <div className={styles.slide} ref={c => this.wrapper =c}>
         <div className={styles['slide-group']} ref={c => this.slideGroup = c}>

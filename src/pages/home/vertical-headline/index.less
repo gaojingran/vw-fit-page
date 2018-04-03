@@ -1,0 +1,79 @@
+
+
+@import '../../../assets/css/theme.less';
+@import '../../../assets/css/mixin.less';
+
+.headline {
+  width: 100%;
+  height: 108px;
+  background-color: #fff;
+  display: flex;
+  .img {
+    flex: 0 0 126px;
+    width: 126px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .slide {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .item {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      .content {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .desc {
+          font-size: 0;
+          &:first-child {
+            margin-bottom: 14px;
+          }
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .label {
+            border-radius: 4px;
+            padding: 2px 6px;
+            border: 1px solid #f66129;
+            color: #f66129;
+            font-size: @font-size-small-s;
+            margin-right: 10px;
+          }
+          .desc {
+            .no-wrap;
+            width: 360px;
+            font-size: @font-size-small;
+            color: @color-title;
+          }
+        }
+      }
+      .img {
+        flex: 0 0 164px;
+        width: 164px;
+        height: 100%;
+        position: relative;
+        .pic {
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .mask {
+          .position-full;
+          position: absolute;
+          background-image: linear-gradient(90deg,#fff, transparent 40%);
+        }
+      }
+    }
+  }
+
+}
