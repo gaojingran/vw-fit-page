@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "vw fit demo",
   "scripts": {
-    "dev": "parcel src/index.html -p 8888",
-    "build": "rimraf dist && cross-env NODE_ENV=development parcel build src/index.html -d dist --public-url /"
+    "dev": "cross-env NODE_ENV=development && parcel src/index.html -p 8888",
+    "build": "rimraf dist && cross-env NODE_ENV=production parcel build src/index.html -d dist --public-url /"
   },
   "repository": {
     "type": "git",
