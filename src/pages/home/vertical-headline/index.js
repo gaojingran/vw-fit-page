@@ -4,8 +4,8 @@ import React from 'react'
 import VerticalSlide from '../../../components/vertical-slide'
 import styles from './index.less'
 
-const imgUrl = '//gw.alicdn.com/tfs/TB1zn5alxrI8KJjy0FpXXb5hVXa-750-100.png_q75.jpg_.webp'
-const picUrl = '//gw.alicdn.com/imgextra/i2/2732126765/TB2yxT9XMnD8KJjy1XdXXaZsVXa_!!0-travel.jpg_150x150q75.jpg_.webp'
+const imgUrl = '//gw.alicdn.com/tfs/TB1zn5alxrI8KJjy0FpXXb5hVXa-750-100.png_q75.jpg'
+const picUrl = '//gw.alicdn.com/imgextra/i2/2732126765/TB2yxT9XMnD8KJjy1XdXXaZsVXa_!!0-travel.jpg_150x150q75.jpg'
 
 export default class VerticalHeadline extends React.Component {
   render() {

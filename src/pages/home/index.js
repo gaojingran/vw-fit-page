@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import withTabBar from '../../components/tab-bar'
 import Scroll from '../../components/scroll'
 import Slide from '../../components/slide'
+import WhiteSpace from '../../components/white-space'
 import TopBar from './top-bar'
 import GridMenu from './grid-menu'
 import VerticalHeadline from './vertical-headline'
@@ -68,8 +69,12 @@ export default class Home extends React.Component {
               ))
             }
           </Slide>
+          <div className={styles.img}>
+            <img src="//gw.alicdn.com/tfs/TB1fxjbiDtYBeNjy1XdXXXXyVXa-750-240.jpg_q90.jpg" />
+          </div>
           <GridMenu />
           <VerticalHeadline />
+          <WhiteSpace />
           <div className={styles.item}>像素<div className={styles.box}/></div>
           <div className={styles.item}>1</div>
           <div className={styles.item}>1</div>
