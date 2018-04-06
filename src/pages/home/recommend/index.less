@@ -1,0 +1,49 @@
+
+
+@import '../../../assets/css/theme.less';
+@import '../../../assets/css/mixin.less';
+
+.recommend {
+  background-color: #fff;
+  .row {
+    display: flex;
+    .col {
+      flex: 1;
+      display: flex;
+      .content {
+        flex: 1;
+        height: 224px;
+        box-sizing: border-box;
+        padding: 20px;
+        .title {
+          font-size: @font-size-medium;
+          color: #ff3a44;
+          height: 30px;
+          line-height: 30px;
+          .no-wrap;
+        }
+        .sub {
+          margin-top: 10px;
+          font-size: @font-size-small;
+          color: #959595;
+          height: 26px;
+          line-height: 26px;
+          .no-wrap;
+        }
+        .img {
+          margin-top: 10px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+          height: 110px;
+        }
+      }
+    }
+    :global {
+      .hairline-v {
+        flex: 0 0 1px;
+        width: 1px;
+      }
+    }
+  }
+}

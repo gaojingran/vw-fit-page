@@ -8,6 +8,7 @@ import WhiteSpace from '../../components/white-space'
 import TopBar from './top-bar'
 import GridMenu from './grid-menu'
 import VerticalHeadline from './vertical-headline'
+import Recommend from './recommend'
 import styles from './index.less'
 
 const banner = [
@@ -75,12 +76,12 @@ export default class Home extends React.Component {
           <GridMenu />
           <VerticalHeadline />
           <WhiteSpace />
-          <div className={styles.item}>像素<div className={styles.box}/></div>
-          <div className={styles.item}>1</div>
-          <div className={styles.item}>1</div>
-          <div className={styles.item}>1</div>
-          <div className={styles.item}>1</div>
-          <div className={styles.item}>1</div>
+          <Recommend />
+          <WhiteSpace />
+          <Recommend />
+          <WhiteSpace />
+          <Recommend />
+          <WhiteSpace />
         </Scroll>
       </div>
     )
